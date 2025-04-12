@@ -18,4 +18,4 @@ agent = Agent(
     add_datetime_to_instructions=True,
 )
 
-agent.print_response("on weekday of next week, search for 2 hours from 7 for drinking", markdown=True)
+agent.print_response("on Sunday this week, create a plan at 6:00～7:00 PM online meeting with X-san. here is the video link https://meet.google.com/xxx-xxxx-xxx", markdown=True)
