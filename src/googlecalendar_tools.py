@@ -5,7 +5,7 @@ import os
 from tzlocal import get_localzone_name
 
 agent = Agent(
-    tools=[GoogleCalendarTools(credentials_path="./client_secret_743826733935-9dkeocjinkl2egoa26ufsi1mt9vu6he2.apps.googleusercontent.com.json")],
+    tools=[GoogleCalendarTools(credentials_path="./client_secret.json")],
     show_tool_calls=True,
     instructions=[
         f"""
