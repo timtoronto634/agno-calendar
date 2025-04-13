@@ -1,6 +1,5 @@
 from agno.agent import Agent
 from agno.models.openai import OpenAIChat
-from agno.playground import Playground, serve_playground_app
 from agno.storage.sqlite import SqliteStorage
 from agno.tools.duckduckgo import DuckDuckGoTools
 
@@ -25,7 +24,3 @@ web_agent = Agent(
 )
 
 
-app = Playground(agents=[web_agent]).get_app()
-
-if __name__ == "__main__":
-    serve_playground_app("open_ai:app", reload=True)
