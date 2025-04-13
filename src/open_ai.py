@@ -1,10 +1,10 @@
 from agno.agent import Agent
 from agno.models.openai import OpenAIChat
-from agno.storage.sqlite import SqliteStorage
 from agno.tools.duckduckgo import DuckDuckGoTools
+from agno.storage.sqlite import SqliteStorage
 
+from storage import agent_storage
 
-agent_storage: str = "tmp/agents.db"
 
 web_agent = Agent(
     name="Web Agent",

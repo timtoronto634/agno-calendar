@@ -3,9 +3,13 @@ from agno.tools.googlecalendar import GoogleCalendarTools
 import datetime
 import os
 from tzlocal import get_localzone_name
+from agno.storage.sqlite import SqliteStorage
 
-agent = Agent(
-    tools=[GoogleCalendarTools(credentials_path="./client_secret_743826733935-9dkeocjinkl2egoa26ufsi1mt9vu6he2.apps.googleusercontent.com.json")],
+from storage import agent_storage
+
+calendar_agent = Agent(
+    name="Calendar Agent",
+    tools=[GoogleCalendarTools(credentials_path="./client_secret.json")],
     show_tool_calls=True,
     instructions=[
         f"""
@@ -16,6 +20,5 @@ agent = Agent(
         """
     ],
     add_datetime_to_instructions=True,
+    storage=SqliteStorage(table_name="web_agent", db_file=agent_storage),
 )
-
-agent.print_response("on Sunday this week, create a plan at 6:00～7:00 PM online meeting with X-san. here is the video link https://meet.google.com/xxx-xxxx-xxx", markdown=True)
